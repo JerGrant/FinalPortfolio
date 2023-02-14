@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-value="5">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+		<link href="/dist/output.css" rel="stylesheet">
+		<link href="./style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;600&family=Montserrat:wght@200;300;600&display=swap" rel="stylesheet">
+		%sveltekit.head%
+	</head>
+	<body class="total" data-sveltekit-preload-data="hover" data-value="0.8">
+		<div style="display: contents">%sveltekit.body%</div>
+
+		<script>
+			//THEMEING SCRIPT
+			const colorThemes = document.querySelectorAll('[name="theme"]');
+			// store theme
+			const storeTheme = function (theme) {
+				localStorage.setItem("theme", theme);
+			};
+			// set theme when visitor returns
+			const setTheme = function () {
+			const activeTheme = localStorage.getItem("theme");
+			colorThemes.forEach((themeOption) => {
+				if (themeOption.id === activeTheme) {
+				themeOption.checked = true;
+				}
+			});
+			// fallback for no :has() support
+			document.documentElement.className = activeTheme;
+			};
+			colorThemes.forEach((themeOption) => {
+			themeOption.addEventListener("click", () => {
+				storeTheme(themeOption.id);
+				// fallback for no :has() support
+				document.documentElement.className = themeOption.id;
+			});
+			});
+			document.onload = setTheme();
+		</script>
+
+		<script type="text/javascript">
+			// BACKGROUND MOVEMENT
+			document.addEventListener("mousemove", parallex);
+			function parallex(e){
+				document.querySelectorAll(".total").forEach(function(move){
+					var moving_value = move.getAttribute("data-value");
+					var x = (e.clientX * moving_value) / 120;
+					var y = (e.clientY * moving_value) / 120;
+					move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+				});
+			}
+		</script>
+
+		<script type="text/javascript">
+			// CURSOR CHANGES
+			const cursor = document.querySelector(".cursor");
+			// Follow cursor on mousemove
+			document.addEventListener("mousemove", (e)=>{
+				let x = e.pageX;
+				let y = e.pageY;
+				cursor.style.top = y + "px";
+				cursor.style.left = x + "px";
+				cursor.style.display = "block";
+				// Cursor effects on mouse stopped
+				function mouseStopped(){cursor.style.display = "none";}
+				clearTimeout(timeout);
+				timeout = setTimeout(mouseStopped, 100);
+			});
+			// Cursor effects on mouseout
+			document.addEventListener("mouseout", () => {cursor.style.display = "none";});
+			document.addEventListener("mousedown", () => {cursor.style.background = "transparent";});
+			document.addEventListener("mouseup", () => {cursor.style.background = "#c9a16f";});
+
+			// Javascript for animate cursor on mouse click
+			const cursorAnimation = document.querySelector(".cursor");
+			const cursors = document.querySelectorAll(".cursor");
+
+			document.addEventListener("click", (e)=>{
+				let x = e.pageX;
+				let y = e.pageY;
+
+				cursorAnimation.style.top = y + "px";
+				cursorAnimation.style.left = x + "px";
+
+				cursors.forEach((cursor) => {
+					cursor.classList.add("active");
+
+					function removeCursorActive(){
+						cursor.classList.remove("active");
+					}
+					setTimeout(removeCursorActive, 100);
+				});
+
+				let cursorClone = cursorAnimation.cloneNode(true);
+				document.querySelector(".app").appendChild(cursorClone);
+				setTimeout(()=>{
+					cursorClone.remove();
+				}, 1000);
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+.total{
+	background-color: var(--color-bg-1);
+}
+</style>

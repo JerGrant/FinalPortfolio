@@ -1,0 +1,97 @@
+@media only screen and (max-width: 811px) {
+
+}
+#contactCard{
+	display:flex; 
+	flex-flow: column wrap;
+	width: 100%;
+    height: fit-content;
+	min-height: 25rem;
+	padding: 3rem 0rem;
+}
+.thePara4{
+    text-align: center;
+	box-shadow: 5px 10px 5px 5px var(--shadowcolor);
+	background-color: var(--color-theme-2);
+	border-radius: 0.5rem; /* 8px */
+	border-color: var(--bordercolor);
+	border-style: solid;
+	border-width: 3px;
+
+}
+.thePara4:hover{
+	transition: 2s;
+	box-shadow: 00px 00px 0px 00px #000000;
+}
+.contactForm{
+	width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.contactInput{
+	background-color: var(--color-bg-1);
+	box-shadow: 2px 2px 2px 0px var(--shadowcolor);
+	border-width: 0.01rem;
+	border-color: var(--color-theme-1);
+	color: var(--color-header-text);
+	font-size: 0.875rem; /* 14px */
+	line-height: 1.25rem; /* 20px */
+	border-radius: 0.5rem; /* 8px */
+	display: block;
+	width: 100%;
+	padding: 0.625rem; /* 10px */
+}
+.contactInput:focus {
+    background-color: var(--actionItems);
+	outline: none;
+	border: none;
+	box-shadow: 3px 3px 3px 2px var(--shadowcolor) inset;
+}
+.contactInput::placeholder{
+	color: var(--color-header-text);
+}
+.contactInput:focus::placeholder {
+	color: #000000;
+}
+.formPrompt{
+	display: block;
+	margin-bottom: 0.5rem; /* 8px */
+	font-size: 0.875rem; /* 14px */
+	line-height: 1.25rem; /* 20px */
+	font-weight: 500;
+	color: var(--color-header-text);
+}
+
+.contactLinks{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+.contactPics{
+	width: 4rem;
+	height: auto;
+	display: inline;
+	filter: drop-shadow(7px 7px 7px #666666);
+	-webkit-filter: drop-shadow(7px 7px 7px black);
+	outline: var(--color-theme-2);
+	border: var(--color-theme-2);
+}
+.sendButton{
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	border: 0.1rem solid var(--bordercolor);
+	border-radius: 1rem;
+	background-color: var(--color-bg-1);
+	color: var(--color-header-text);
+}
+.sendButton:hover{
+    background-color: var(--actionItems);
+	color: var(--color-bg-1);
+	border-color: var(--color-bg-1);
+}
+.sendButton:focus{
+	box-shadow: 0.3rem 0.3rem 0.3rem 0.2rem var(--shadowcolor) inset;
+}

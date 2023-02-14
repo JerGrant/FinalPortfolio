@@ -1,0 +1,178 @@
+header{
+	height: fit-content;
+	width: 60%;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: space-between;
+	z-index: 2;
+    background: var(--color-theme-2);
+	border-radius: 1rem;
+	box-shadow: .5rem .5rem .8rem .1rem var(--shadowcolor);
+	border: 0.25rem solid var(--color-bg-1);
+}
+@media only screen and (max-width: 600px) {
+	header{
+		height: fit-content;
+		width: 90vw;
+	}
+	.dropDown{
+		left: 4rem;
+		top:-4rem;
+	}
+	.navWrapper{
+		align-items: flex-start;
+		height: 90%;
+	}
+	div.scene {
+		height: 3rem;
+	}
+}
+.imgWrapper{
+	display:inline-flex;
+	align-items: center;
+	padding: 1rem;
+}
+.navWrapper{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+header:hover{
+	box-shadow: .1rem .1rem .1rem .1rem var(--shadowcolor);
+	background: var(--color-theme-1);
+	transition: 2s;
+}
+header:active{box-shadow: .05rem .05rem .1rem .1rem var(--shadowcolor) inset;}
+header a{
+	color: var(--color-text);
+	text-decoration: none;
+	letter-spacing: 0.05rem;
+	transition: color 0.2s linear;
+	height: fit-content;
+	font: 1rem 'Montserrat', sans-serif 600;
+}
+
+.dropBtn{
+	color: var(--color-text);
+	text-shadow: var(--shadowText);
+	font-size: 1rem;
+	text-decoration: none;
+	letter-spacing: 0.1rem;
+	transition: color 0.2s linear;
+	background-color: transparent;
+	border: none;
+}
+.projectButton{
+	display: inline-flex;
+	position: relative;
+	color: var(--color-text);
+	text-decoration: none;
+	letter-spacing: 0.05rem;
+	transition: color 0.2s linear;
+}
+.projectButton:hover{
+	color: var(--actionItems);
+}
+header a:hover {color: var(--actionItems);}
+header a:active{
+	color: var(--color-bg-1);
+	text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.8);
+}
+header img{
+	width: 3rem;
+	filter: drop-shadow(7px 7px 7px #666666);
+	-webkit-filter: drop-shadow(7px 7px 7px black);
+	outline: var(--color-theme-2);
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+}
+header img:hover{animation: wiggle  ease 1s infinite;}
+
+.dropDown{
+	display: inline-block;
+	height: fit-content;
+	width: fit-content;
+}
+.dropDown:hover .dropItems {display: block;}
+.dropDown:hover .dropBtn{color: var(--actionItems);}
+.dropDown:active .dropBtn{
+	color: var(--color-bg-1);
+	text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.8);
+}
+
+.chevy{
+	display: flex;
+}
+.chevy:not(:hover){
+	animation: wiggle;
+	animation-duration: 1s;
+	animation-iteration-count: 20;
+}
+
+.dropItems{
+	display: none;
+	position: absolute;
+	z-index: 2;
+	border-radius: 1rem;
+	padding: 0.25rem;
+	background-color: var(--color-theme-2);
+	box-shadow: 2px 2px 6px 6px rgb(0, 0, 0);
+	border: 0.2rem ridge var(--color-bg-1);
+}
+.dropItems a {
+	display: flex;
+	color: var(--color-text);
+	text-decoration: none;
+	padding: 0.25rem;
+	text-shadow: var(--shadowText);
+	letter-spacing: 0.1rem;
+	transition: color 0.2s linear;
+	border-radius: 1rem;
+}
+.dropItems span{display: flex;}
+.dropItems a:hover{background-color: var(--color-bg-1);}
+.dropnavLink:hover .car{
+	animation: lightSpeedInLeft;
+	animation-duration: 1s; /* don't forget to set a duration! */
+}
+.dropnavLink:hover .electron{
+	animation: flash;
+	animation-duration: 2s; /* don't forget to set a duration! */
+}
+.dropnavLink:hover .shield{
+	animation: flip;
+	animation-duration: 2s; /* don't forget to set a duration! */
+}
+.dropnavLink:hover .flag{
+	animation: wobble;
+	animation-duration: 2s; /* don't forget to set a duration! */
+}
+.dropnavLink:hover .controller{
+	animation: tada;
+	animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.gear:hover{
+	animation: rotate 3s ease-out infinite;	
+}
+@keyframes rotate {
+	0%{transform: rotate(0deg);}
+	50%{transform: rotate(180deg);}
+	100%{transform: rotate(360deg);}
+}
+/*3D LOGO*/
+.scene {
+	left: -1rem;
+	width: 4rem;
+	display: inline-flex;
+	position: relative;
+	z-index: 1;
+	height: 4rem;
+}
