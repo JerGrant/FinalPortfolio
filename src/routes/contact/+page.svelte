@@ -2,7 +2,7 @@
     import "./contact.css";
     import "../../style.css";
     import github from '../../lib/github.png';
-    import linkedin from '../../lib/Li.png';
+    import linkedin from '../../lib/li.png';
     import gmail from '../../lib/gmail.png';
 </script>
 

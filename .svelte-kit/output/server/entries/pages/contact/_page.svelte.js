@@ -1,7 +1,6 @@
 import { c as create_ssr_component, d as add_attribute } from "../../../chunks/index2.js";
-/* empty css                     */import { a as gmail, g as github } from "../../../chunks/gmail.js";
+/* empty css                     */import { l as linkedin, a as gmail, g as github } from "../../../chunks/li.js";
 const contact = "";
-const linkedin = "/_app/immutable/assets/li-3c0149f2.png";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `
 <div class="${"thePara4"}" id="${"contactCard"}"><br>
