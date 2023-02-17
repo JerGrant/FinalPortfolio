@@ -26,21 +26,21 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         <a href="${"mailto: JeremiahGrantWork@gmail.com"}" target="${"_blank"}" class="${"tooltip"}"><img${add_attribute("src", gmail, 0)} alt="${"gmail"}"> <span class="${"tooltiptext"}">Email me!</span></a></div>
 
     <div class="${"themeDrop"}"><span class="${"material-symbols-outlined gear animate__animated"}">settings</span>
-        <div class="${"themeItems"}"><form class="${"color-picker"}" action="${""}"><fieldset><legend class="${""}">Pick a theme!</legend>
+        <div class="${"themeItems"}"><form class="${"color-picker"}" action="${""}"><fieldset><legend class="${"themeWords"}">Pick a theme!</legend>
                     <br>
-                    <label for="${"theme"}" class="${""}">Metallic:</label>
+                    <label for="${"theme"}" class="${"themeWords"}">Metallic:</label>
                     <input type="${"radio"}" name="${"theme"}" id="${"metallic"}">
                     <br>
-                    <label for="${"theme"}" class="${""}">Light:</label>
+                    <label for="${"theme"}" class="${"themeWords"}">Light:</label>
                     <input type="${"radio"}" name="${"theme"}" id="${"light"}">
                     <br>
-                    <label for="${"theme"}" class="${""}">Dark:</label>
+                    <label for="${"theme"}" class="${"themeWords"}">Dark:</label>
                     <input type="${"radio"}" name="${"theme"}" id="${"dark"}">
                     <br>
-                    <label for="${"theme"}" class="${""}">Smoke:</label>
+                    <label for="${"theme"}" class="${"themeWords"}">Smoke:</label>
                     <input type="${"radio"}" name="${"theme"}" id="${"something"}">
                     <br>
-                    <label for="${"theme"}" class="${""}">Dyslexia-Friendly:</label>
+                    <label for="${"theme"}" class="${"themeWords"}">Dyslexic:</label>
                     <input type="${"radio"}" name="${"theme"}" id="${"dyslexia"}"></fieldset></form></div></div></div></header>`;
 });
 export {

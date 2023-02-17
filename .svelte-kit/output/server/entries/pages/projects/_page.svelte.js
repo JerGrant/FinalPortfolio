@@ -1,5 +1,6 @@
 import { c as create_ssr_component, e as compute_rest_props, f as spread, g as escape_object, h as escape_attribute_value, d as add_attribute, v as validate_component } from "../../../chunks/index2.js";
 /* empty css                     */import classNames from "classnames";
+import "svelte-reveal";
 const project = "";
 const Thumbnail_svelte_svelte_type_style_lang = "";
 const Indicator_svelte_svelte_type_style_lang = "";
@@ -187,34 +188,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 	
-	<div id="${"ue5Card"}"><button class="${"shadowButton"}" id="${"showUe"}">&lt;UE5&gt;
-		</button>
-			<div class="${"text-gray-200 hidden"}" id="${"UeToShow"}"><div class="${"vehicle-Title"}">// UE5 </div>
-				<div class="${"thePara"}"><span class="${"theBrackets"}">&lt;UE5 Learning&gt;</span>
-				<br>
-				<br>
-				A Side project with Unreal Engine 5 for fun.
-				<br>
-				<br>
-				Spend 45 minutes each day to learn the new engine.
-				<br>
-				<br>
-				An outlet to work on different tech outside of my normal technology stack.
-				<br>
-				<br>
-			<button class="${"animated-button"}" id="${"closeUe"}">&lt;/UE5 Learning&gt;
-		</button></div>
-		<div class="${"videoContainer"}">${validate_component(Video, "Video").$$render(
-    $$result,
-    {
-      src: "",
-      controls: true,
-      class: "w-90 h-auto videoBlurb",
-      trackSrc: "flowbite.mp4"
-    },
-    {},
-    {}
-  )}</div></div></div>
+
+	
 </div>`;
 });
 export {

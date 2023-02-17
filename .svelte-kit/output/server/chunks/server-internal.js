@@ -57,7 +57,7 @@ ${components[1] ? `${validate_component(components[0] || missing_component, "sve
 ${``}`;
 });
 set_paths({ "base": "", "assets": "" });
-set_version("1676402725894");
+set_version("1676670179874");
 const options = {
   csp: { "mode": "auto", "directives": { "upgrade-insecure-requests": false, "block-all-mixed-content": false }, "reportOnly": { "upgrade-insecure-requests": false, "block-all-mixed-content": false } },
   csrf_check_origin: true,
@@ -68,7 +68,7 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en" data-value="5">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />\n		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />\n		<link href="/dist/output.css" rel="stylesheet">\n		<link href="./style.css" rel="stylesheet">\n		<link rel="preconnect" href="https://fonts.googleapis.com">\n		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n		<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;600&family=Montserrat:wght@200;300;600&display=swap" rel="stylesheet">\n		' + head + '\n	</head>\n	<body class="total" data-sveltekit-preload-data="hover" data-value="0.8">\n		<div style="display: contents">' + body + `</div>
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en" data-value="5">\n	<svelte:head>\n		<title>Jeremiah Grant - Programming Portfolio</title>\n	</svelte:head>\n	<head>\n\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />\n		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />\n		<link href="/dist/output.css" rel="stylesheet">\n		<link href="./style.css" rel="stylesheet">\n		<link rel="preconnect" href="https://fonts.googleapis.com">\n		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n		<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;600&family=Montserrat:wght@200;300;600&display=swap" rel="stylesheet">\n		' + head + '\n	</head>\n	<body class="total" data-sveltekit-preload-data="hover" data-value="0.8">\n		<div style="display: contents">' + body + `</div>
 
 		<script>
 			//THEMEING SCRIPT

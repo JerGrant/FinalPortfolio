@@ -1,5 +1,6 @@
 import { c as create_ssr_component } from "../../../chunks/index2.js";
-/* empty css                     */const about = "";
+/* empty css                     */import "svelte-reveal";
+const about = "";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
   code: "@keyframes from-left{0%{transform:rotateX(50deg) translateX(-200vw) skewX(-50deg);opacity:1}100%{transform:rotateX(0deg) translateX(0) skewX(0deg);opacity:1}}@keyframes puff-in-hor{0%{transform:scaleX(2);filter:blur(4px);opacity:0}100%{transform:scaleX(1);filter:blur(0px);opacity:1}}@keyframes puff-in-ver{0%{transform:scaleY(2);filter:blur(4px);opacity:0}100%{transform:scaleY(1);filter:blur(0px);opacity:1}}",
@@ -14,7 +15,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     
         
             <div class="${"hidden"}" id="${"textToShow"}"><div class="${"about-Title"}">// About</div>
-                <div class="${"thePara3"}"><a href="${"#"}"><img class="${"rounded-t-lg"}" src="${""}" alt="${""}"></a>
+                <div class="${"thePara3"}"><div class="${"faceContainer"}"><div class="${"facePic"}"></div></div>
                     <div class="${"p-5"}"><h5 class="${"theBrackets"}">&lt;About me&gt;</h5>
                         <p class="${"mb-3 aboutPara"}">Hi there! I&#39;m Jeremiah Grant, a 26-year-old Full-stack Developer based out of Detroit.
                             <br>
