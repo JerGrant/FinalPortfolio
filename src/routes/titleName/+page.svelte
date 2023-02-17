@@ -55,12 +55,11 @@
 .logo{
 	text-align: center;
 	font-size: 4rem;
-	
+	font-weight: 500;
 }
 .logo span {
 	color: var(--color-header-text);
 	/* offset-x | offset-y | blur-radius | color */
-	text-shadow: 6px 6px 5px black;
 	display: inline-block;
 	animation: waviy .85s 1;
 	animation-delay: calc(.1s * var(--i));
@@ -75,11 +74,11 @@
 .logo2{
 	text-align: center;
 	font-size: 4rem;
+	font-weight: 500;
 }
 .logo2 span {
 	color: var(--color-header-text);
 	/* offset-x | offset-y | blur-radius | color */
-	text-shadow: 6px 6px 5px black;
 	display: inline-block;
 	animation: waviy .85s 1;
 	animation-delay: calc(.1s * var(--i));

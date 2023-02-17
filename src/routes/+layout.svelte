@@ -29,5 +29,5 @@
 	<ProjectData />
 	<ContactData />
 	<FooterData />
-</div>
 
+</div>

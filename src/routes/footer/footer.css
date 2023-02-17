@@ -5,12 +5,12 @@ footer {
 	left: 0;
 	width: 100%;
 	background: var(--color-theme-2);
-	box-shadow: .5rem .5rem .8rem .1rem var(--shadowcolor);
 	color: var(--color-header-text);
 	text-shadow: 4px 4px 4px black;
-	border-top: 0.25rem solid var(--color-bg-1);
+	border-top: 0.1rem solid var(--bordercolor);
 	text-align: center;
 	z-index: 2;
+	text-shadow: none;
 }
 footer:hover{
 background: var(--color-theme-1);

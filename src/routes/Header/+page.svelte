@@ -44,21 +44,21 @@
         <div class="themeItems">
             <form class="color-picker" action="">
                 <fieldset>
-                    <legend class="">Pick a theme!</legend>
+                    <legend class="themeWords">Pick a theme!</legend>
                     <br/>
-                    <label for="theme" class="">Metallic:</label>
+                    <label for="theme" class="themeWords">Metallic:</label>
                     <input type="radio" name="theme" id="metallic">
                     <br/>
-                    <label for="theme" class="">Light:</label>
+                    <label for="theme" class="themeWords">Light:</label>
                     <input type="radio" name="theme" id="light" >
                     <br/>
-                    <label for="theme" class="">Dark:</label>
+                    <label for="theme" class="themeWords">Dark:</label>
                     <input type="radio" name="theme" id="dark">
                     <br/>
-                    <label for="theme" class="">Smoke:</label>
+                    <label for="theme" class="themeWords">Smoke:</label>
                     <input type="radio" name="theme" id="something">
                     <br/>
-                    <label for="theme" class="">Dyslexia-Friendly:</label>
+                    <label for="theme" class="themeWords">Dyslexic:</label>
                     <input type="radio" name="theme" id="dyslexia">
                 </fieldset>
 

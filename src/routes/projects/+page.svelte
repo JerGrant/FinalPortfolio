@@ -7,6 +7,7 @@
 	import Quantum from '../../lib/videos/Quantum.mp4';
 	import VehicleMapping from '../../lib/videos/VehicleMapping.mp4';
 	import WinnerTakesAll from '../../lib/videos/WinnerTakesAll.mp4';
+	import { reveal } from 'svelte-reveal';
 </script>
 
 
@@ -14,11 +15,11 @@
 
 
 <div class="projectRow">
-	<div id="vehicleCard">
+	<div id="vehicleCard" use:reveal={{ transition: "blur" }}>
 		<button class="shadowButton" id="showHierarchy">
 			&lt;Vehicle&gt;
 		</button>
-		<div class="text-gray-200  hidden" id="hierToShow">
+		<div class="text-gray-200  hidden" id="hierToShow" use:reveal={{ transition: "slide" }}>
 			<div class="vehicle-Title">// Vehicle</div>
 		<div class="thePara">
 			<span class="theBrackets">&lt;Vehicle Hierarchy&gt;</span>
@@ -48,11 +49,11 @@
 	</div>
 
 		<!--QUANTUM COMPUTING-->
-	<div id="quantumCard">
+	<div id="quantumCard" use:reveal={{ transition: "blur" }}>
 		<button class="shadowButton2" id="showQuant">
 			&lt;Quantum&gt;
 		</button>
-		<div class="text-gray-200 hidden" id="QuantToShow">
+		<div class="text-gray-200 hidden" id="QuantToShow" use:reveal={{ transition: "slide" }}>
 			<div class="vehicle-Title">// Quantum</div>
 			<div class="videoContainer2">
 				<Video src='{Quantum}' controls  class='w-90 h-auto videoBlurb' trackSrc='flowbite.mp4' />
@@ -81,11 +82,11 @@
 	</div>
 
 	<!--AWS ENCRYPTED STORAGE-->
-	<div id="awsCard">
+	<div id="awsCard" use:reveal={{ transition: "blur" }}>
 		<button class="shadowButton" id="showAws">
 			&lt;AWS&gt;
 		</button>
-			<div class="hidden" id="AwsToShow">
+			<div class="hidden" id="AwsToShow" use:reveal={{ transition: "slide" }}>
 				<div class="vehicle-Title">// AWS</div>
 			<div class="thePara">
 				<span class="theBrackets">&lt;AWS Encrypted Storage&gt;</span>
@@ -121,11 +122,11 @@
 
 
 	<!--WINNER TAKES ALL-->
-	<div  id="winnerCard">
+	<div  id="winnerCard" use:reveal={{ transition: "blur" }}>
 		<button class="shadowButton2" id="showWin">
 			&lt;Winner&gt;
 		</button>
-			<div class="text-gray-200 hidden" id="WinToShow">
+			<div class="text-gray-200 hidden" id="WinToShow" use:reveal={{ transition: "slide" }}>
 				<div class="vehicle-Title">// Winner</div>
 		<div class="videoContainer2">
 			<Video src='{WinnerTakesAll}' controls  class='w-90 h-auto videoBlurb' trackSrc='flowbite.mp4' />
@@ -154,12 +155,12 @@
 	</div>
 
 
-	<!--UNREAL ENGINE 5-->
-	<div id="ue5Card">
+	<!--UNREAL ENGINE 5
+	<div id="ue5Card" use:reveal={{ transition: "blur" }}>
 		<button class="shadowButton" id="showUe">
 			&lt;UE5&gt;
 		</button>
-			<div class="text-gray-200 hidden" id="UeToShow">
+			<div class="text-gray-200 hidden" id="UeToShow" use:reveal={{ transition: "slide" }}>
 				<div class="vehicle-Title">// UE5 </div>
 				<div class="thePara">
 				<span class="theBrackets">&lt;UE5 Learning&gt;</span>
@@ -183,6 +184,9 @@
 		</div>
 		</div>
 	</div>
+	-->
+
+	
 </div>
 
 

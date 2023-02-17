@@ -1,6 +1,6 @@
 header{
 	height: fit-content;
-	width: 60%;
+	width: 70%;
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -11,11 +11,13 @@ header{
 	border-radius: 1rem;
 	box-shadow: .5rem .5rem .8rem .1rem var(--shadowcolor);
 	border: 0.25rem solid var(--color-bg-1);
+	font-size: 1.5rem;
 }
 @media only screen and (max-width: 600px) {
 	header{
 		height: fit-content;
 		width: 90vw;
+		font-size: 1rem;
 	}
 	.dropDown{
 		left: 4rem;
@@ -25,8 +27,12 @@ header{
 		align-items: flex-start;
 		height: 90%;
 	}
-	div.scene {
-		height: 3rem;
+	div.scene {height: 3rem;}
+	button.dropBtn{font-size: 1rem;}
+	span.chevy{top: 0rem;}
+	div.dropItems{
+		right: 0rem;
+		position:absolute;
 	}
 }
 .imgWrapper{
@@ -54,6 +60,7 @@ header a{
 	color: var(--color-text);
 	text-decoration: none;
 	letter-spacing: 0.05rem;
+	padding: 0rem 0.5rem 0rem 0.5rem;
 	transition: color 0.2s linear;
 	height: fit-content;
 	font: 1rem 'Montserrat', sans-serif 600;
@@ -62,7 +69,7 @@ header a{
 .dropBtn{
 	color: var(--color-text);
 	text-shadow: var(--shadowText);
-	font-size: 1rem;
+	font-size: 1.5rem;
 	text-decoration: none;
 	letter-spacing: 0.1rem;
 	transition: color 0.2s linear;
@@ -76,6 +83,7 @@ header a{
 	text-decoration: none;
 	letter-spacing: 0.05rem;
 	transition: color 0.2s linear;
+	font-weight: 600;
 }
 .projectButton:hover{
 	color: var(--actionItems);
@@ -109,6 +117,8 @@ header img:hover{animation: wiggle  ease 1s infinite;}
 
 .chevy{
 	display: flex;
+	position: relative;
+	top: 0.5rem;
 }
 .chevy:not(:hover){
 	animation: wiggle;
@@ -138,6 +148,26 @@ header img:hover{animation: wiggle  ease 1s infinite;}
 }
 .dropItems span{display: flex;}
 .dropItems a:hover{background-color: var(--color-bg-1);}
+.shield{
+	position: relative;
+	top: 0.5rem;
+}
+.car{
+	position: relative;
+	top: 0.5rem;
+}
+.electron{
+	position: relative;
+	top: 0.5rem;
+}
+.flag{
+	position: relative;
+	top: 0.5rem;
+}
+.controller{
+	position: relative;
+	top: 0.5rem;
+}
 .dropnavLink:hover .car{
 	animation: lightSpeedInLeft;
 	animation-duration: 1s; /* don't forget to set a duration! */

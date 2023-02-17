@@ -4,7 +4,7 @@
 </script>
 
 
-<footer>
+<footer >
 	Copyright 2023 Jeremiah Grant
 </footer>
 

@@ -187,6 +187,7 @@
 	box-shadow: 10px 10px 5px 5px var(--shadowcolor);
 	background-color: var(--color-theme-2);
 	border: 0.25rem solid var(--bordercolor);
+	height: fit-content;
 }
 .videoBlurb{
 	padding: 1rem;
@@ -202,6 +203,7 @@
 	box-shadow: -10px 10px 5px 5px var(--shadowcolor);
 	background-color: var(--color-theme-2);
 	border: 0.25rem solid var(--bordercolor);
+	height: fit-content;
 }
 .vehicle-Title{
 	color: var(--color-header-text);

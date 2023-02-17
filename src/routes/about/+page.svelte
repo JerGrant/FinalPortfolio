@@ -1,12 +1,15 @@
 <script lang="ts">
     import "../../style.css";
 	import "./about.css";
+    import face from '../../lib/face.png';
+    import face2 from '../../lib/face2.png';
+    import { reveal } from 'svelte-reveal';
 </script>
 
 
 
 <!--ABOUT & SKILLS-->
-<div class="row">
+<div class="row" use:reveal={{ transition: "blur" }}>
 
     <div class="flexColumn1" id="aboutCard">
         <button class="shadowButton tooltip" id="showTextButton" ><span class="tooltiptext">Click me!</span>
@@ -14,12 +17,12 @@
         </button>
     
         <!--ABOUT SECTION-->
-            <div class="hidden" id="textToShow">
+            <div class="hidden" id="textToShow" use:reveal={{ transition: "slide" }}>
                 <div class="about-Title">// About</div>
                 <div class="thePara3">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="" alt="" />
-                    </a>
+                    <div class="faceContainer">
+                        <div class="facePic" />
+                    </div>
                     <div class="p-5">
                         <h5 class="theBrackets">&lt;About me&gt;</h5>
                         <p class="mb-3 aboutPara">Hi there! I'm Jeremiah Grant, a 26-year-old Full-stack Developer based out of Detroit.
@@ -41,7 +44,7 @@
         <button class="shadowButton3" id="showSkills">
             &lt;Skills&gt;
         </button>
-            <div id="skillsToShow" class="hidden">
+            <div id="skillsToShow" class="hidden" use:reveal={{ transition: "slide" }}>
                 <div class="skill-Title">// Skills</div>
                 <div class="thePara5">
                     <h2 class="theBrackets">&lt;Skills&gt;</h2>
@@ -127,6 +130,9 @@
 </div>
 
 <style>
+
+
+
 	@keyframes -global-from-left {
 	0% {
 	  transform: rotateX(50deg) translateX(-200vw) skewX(-50deg);
