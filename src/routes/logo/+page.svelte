@@ -3,6 +3,7 @@
     import * as Threlte from '@threlte/core';
     import * as Extra from '@threlte/extras';
     import type { Object3D } from 'three';
+
     // 3D LOGO
   let inViewport: any
   const onViewportEnter = (e: CustomEvent<Object3D>) => {
@@ -46,7 +47,7 @@
 <!--The sphere uses <Threlte.Mesh> where you can set the geometry and material for the mesh including casting shadows-->
       <!-- Sphere -->
 
-      <Extra.GLTF url="../../src/routes/jglogo.glb"
+      <Extra.GLTF url="../../lib/jglogo.glb"
       position={{ y:-2 }}
       receiveShadow
       castShadow

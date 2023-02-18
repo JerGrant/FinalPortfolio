@@ -9,6 +9,7 @@ const css = {
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `
+
 <div class="${"row"}"><div class="${"flexColumn1"}" id="${"aboutCard"}"><button class="${"shadowButton tooltip"}" id="${"showTextButton"}"><span class="${"tooltiptext"}">Click me!</span>
             &lt;About me&gt;
         </button>

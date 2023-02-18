@@ -16634,6 +16634,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       
       ${validate_component(AmbientLight2, "Threlte.AmbientLight").$$render($$result, { color: "blue", intensity: 5 }, {}, {})}
 
+
       
       ${validate_component(DirectionalLight2, "Threlte.DirectionalLight").$$render(
           $$result,
