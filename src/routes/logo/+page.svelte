@@ -3,7 +3,6 @@
     import * as Threlte from '@threlte/core';
     import * as Extra from '@threlte/extras';
     import type { Object3D } from 'three';
-
     // 3D LOGO
   let inViewport: any
   const onViewportEnter = (e: CustomEvent<Object3D>) => {
@@ -30,6 +29,7 @@
   <!-- The <AmbientLight> is going to equally light your scene, think of it as cheap global illumination -->
       <!-- Lights the scene equally -->
       <Threlte.AmbientLight color="blue" intensity={5} />
+
 <!--The <DirectionalLight> is more like a sun in your scene that also casts a shadow (the shadow camera also has to be adjusted)-->
       <!-- Light that casts a shadow -->
       <Threlte.DirectionalLight
@@ -46,7 +46,7 @@
 <!--The sphere uses <Threlte.Mesh> where you can set the geometry and material for the mesh including casting shadows-->
       <!-- Sphere -->
 
-      <Extra.GLTF url="../../src/lib/jglogo.glb"
+      <Extra.GLTF url="../../src/routes/jglogo.glb"
       position={{ y:-2 }}
       receiveShadow
       castShadow

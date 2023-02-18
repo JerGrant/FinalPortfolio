@@ -53,15 +53,13 @@
 	div.videoContainer{
 		order: 1;
 		width: 100%;
-        height: 25rem;
-        min-height: 25rem;
+        height: fit-content;
 		margin-bottom: 2rem;
 	}
 	div.videoContainer2{
 		order: 1;
 		width: 100%;
-        height: 25rem;
-        min-height: 25rem;
+        height: fit-content;
 		margin-bottom: 2rem;
 	}
 	div.thePara2{

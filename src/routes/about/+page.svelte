@@ -1,23 +1,22 @@
 <script lang="ts">
     import "../../style.css";
 	import "./about.css";
-    import face from '../../lib/face.png';
-    import face2 from '../../lib/face2.png';
     import { reveal } from 'svelte-reveal';
+    
 </script>
 
 
 
 <!--ABOUT & SKILLS-->
-<div class="row" use:reveal={{ transition: "blur" }}>
 
+<div class="row">
     <div class="flexColumn1" id="aboutCard">
         <button class="shadowButton tooltip" id="showTextButton" ><span class="tooltiptext">Click me!</span>
             &lt;About me&gt;
         </button>
     
         <!--ABOUT SECTION-->
-            <div class="hidden" id="textToShow" use:reveal={{ transition: "slide" }}>
+            <div class="hidden" id="textToShow">
                 <div class="about-Title">// About</div>
                 <div class="thePara3">
                     <div class="faceContainer">
@@ -40,11 +39,11 @@
             </div>
     </div>
 
-    <div class="flexColumn2" id="skillCard"> 
+    <div class="flexColumn2" id="skillCard" use:reveal={{ transition: "blur", threshold: 0.2}}> 
         <button class="shadowButton3" id="showSkills">
             &lt;Skills&gt;
         </button>
-            <div id="skillsToShow" class="hidden" use:reveal={{ transition: "slide" }}>
+            <div id="skillsToShow" class="hidden">
                 <div class="skill-Title">// Skills</div>
                 <div class="thePara5">
                     <h2 class="theBrackets">&lt;Skills&gt;</h2>

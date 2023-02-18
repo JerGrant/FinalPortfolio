@@ -19,7 +19,7 @@
 		<button class="shadowButton" id="showHierarchy">
 			&lt;Vehicle&gt;
 		</button>
-		<div class="text-gray-200  hidden" id="hierToShow" use:reveal={{ transition: "slide" }}>
+		<div class="text-gray-200  hidden" id="hierToShow">
 			<div class="vehicle-Title">// Vehicle</div>
 		<div class="thePara">
 			<span class="theBrackets">&lt;Vehicle Hierarchy&gt;</span>
@@ -53,7 +53,7 @@
 		<button class="shadowButton2" id="showQuant">
 			&lt;Quantum&gt;
 		</button>
-		<div class="text-gray-200 hidden" id="QuantToShow" use:reveal={{ transition: "slide" }}>
+		<div class="text-gray-200 hidden" id="QuantToShow">
 			<div class="vehicle-Title">// Quantum</div>
 			<div class="videoContainer2">
 				<Video src='{Quantum}' controls  class='w-90 h-auto videoBlurb' trackSrc='flowbite.mp4' />
@@ -82,11 +82,11 @@
 	</div>
 
 	<!--AWS ENCRYPTED STORAGE-->
-	<div id="awsCard" use:reveal={{ transition: "blur" }}>
+	<div id="awsCard" use:reveal={{ transition: "blur"}}>
 		<button class="shadowButton" id="showAws">
 			&lt;AWS&gt;
 		</button>
-			<div class="hidden" id="AwsToShow" use:reveal={{ transition: "slide" }}>
+			<div class="hidden" id="AwsToShow">
 				<div class="vehicle-Title">// AWS</div>
 			<div class="thePara">
 				<span class="theBrackets">&lt;AWS Encrypted Storage&gt;</span>
@@ -126,7 +126,7 @@
 		<button class="shadowButton2" id="showWin">
 			&lt;Winner&gt;
 		</button>
-			<div class="text-gray-200 hidden" id="WinToShow" use:reveal={{ transition: "slide" }}>
+			<div class="text-gray-200 hidden" id="WinToShow">
 				<div class="vehicle-Title">// Winner</div>
 		<div class="videoContainer2">
 			<Video src='{WinnerTakesAll}' controls  class='w-90 h-auto videoBlurb' trackSrc='flowbite.mp4' />

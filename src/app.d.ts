@@ -7,6 +7,11 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+	declare module '**/*.glb' {
+		const src: string
+		export default src
+	}
+	declare module '**/*.glb'
 }
 
 export {};

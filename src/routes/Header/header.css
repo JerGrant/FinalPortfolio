@@ -19,16 +19,16 @@ header{
 		width: 90vw;
 		font-size: 1rem;
 	}
-	.dropDown{
-		left: 4rem;
-		top:-4rem;
-	}
 	.navWrapper{
 		align-items: flex-start;
 		height: 90%;
 	}
 	div.scene {height: 3rem;}
-	button.dropBtn{font-size: 1rem;}
+	button.dropBtn{
+		font-size: 1rem; 
+		left: 4rem;
+
+	}
 	span.chevy{top: 0rem;}
 	div.dropItems{
 		right: 0rem;
@@ -75,6 +75,8 @@ header a{
 	transition: color 0.2s linear;
 	background-color: transparent;
 	border: none;
+	display: flex;
+	position: relative;
 }
 .projectButton{
 	display: inline-flex;
@@ -104,7 +106,7 @@ header img{
 header img:hover{animation: wiggle  ease 1s infinite;}
 
 .dropDown{
-	display: inline-block;
+	display: inline-flex;
 	height: fit-content;
 	width: fit-content;
 }

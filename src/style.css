@@ -24,7 +24,7 @@
 	border-color: var(--bordercolor);
 	box-shadow: var(--shadowBoxing);
 	text-shadow: VAR(--shadowText);
-	--backgroundImage: url(./lib/background/fullbody.png);
+	--backgroundImage: url(./lib/fireStorm.png);
 	background-size: contain;
 	--shadowButtonImage: url(./lib/background/cool.jpeg);
 	--shadowButtonImage2: url(./lib/background/eagle.jpeg);
@@ -233,7 +233,7 @@ fieldset{
 	--actionItems: #11e3ee;
 	--color-text: #CAC3B8;
 	--color-header-text: #CAC3B8;
-	--backgroundImage: url(./lib/metalEgg.png);
+	background-color: var(--color-bg-1);
 	letter-spacing: 0.35ch;
     word-spacing: 1.225ch; /* 3.5x letter-spacing */
 	font-variant-ligatures: none;
@@ -249,7 +249,7 @@ fieldset{
 	--actionItems: #11e3ee;
 	--color-text: #CAC3B8;
 	--color-header-text: #CAC3B8;
-	--backgroundImage: url(./lib/metalEgg.png);
+	background-color: var(--color-bg-1);
 	letter-spacing: 0.35ch;
     word-spacing: 1.225ch; /* 3.5x letter-spacing */
 	font-variant-ligatures: none;

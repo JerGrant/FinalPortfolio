@@ -23,12 +23,14 @@
     div.row{
         padding-left: 0.2rem;
         padding-right: 0.2rem;
+        padding-top: 1rem;
         row-gap: 3rem;
     }
     #textToShow{
         width: 24rem;
         right: 4rem;
     }
+
 }
 
 .row {
@@ -92,7 +94,6 @@ animation: pulse ease 2s infinite;
     padding: 0.5rem 0.5rem 0rem 0.5rem;
     background:transparent center/cover url("../../lib/face2.png") no-repeat;
     display: flex;
-
 }
 .facePic:hover{
     padding-top: 20rem;
