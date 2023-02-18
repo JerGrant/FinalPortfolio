@@ -16660,7 +16660,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       ${validate_component(GLTF, "Extra.GLTF").$$render(
           $$result,
           {
-            url: "../../src/lib/jglogo.glb",
+            url: "../../lib/jglogo.glb",
             position: { y: -2 },
             receiveShadow: true,
             castShadow: true,
