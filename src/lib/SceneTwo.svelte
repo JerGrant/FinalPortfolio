@@ -5,9 +5,9 @@
         AmbientLight,
         OrbitControls,
     } from '@threlte/core';
-    import{GLTF} from '@threlte/extras';
+    import{GLTF, useGltf} from '@threlte/extras';
+    const url="/src/lib/jg.glb?url";
 
-    const url="/src/lib/jg.glb";
 </script>
 
 <PerspectiveCamera 

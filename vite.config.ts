@@ -8,7 +8,8 @@ const config: UserConfig = {
 	},
 	ssr: {
 		noExternal: ['three', 'troika-three-text']
-	}
+	},
+	assetsInclude:[]
 };
 
 export default config;
