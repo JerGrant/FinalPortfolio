@@ -34,16 +34,16 @@ const Video = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   Your browser does not support the video tag.
 </video>`;
 });
-const Encryption = "/_app/immutable/assets/Encryption-86c34db0.mp4";
-const Encryption2 = "/_app/immutable/assets/Encryption-f31be9db.ogg";
-const Quantum = "/_app/immutable/assets/Quantum-b5457b41.mp4";
-const VehicleMapping = "/_app/immutable/assets/VehicleMapping-0e48228a.mp4";
-const WinnerTakesAll = "/_app/immutable/assets/WinnerTakesAll-ef2d24b4.mp4";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
   code: "@keyframes from-left{0%{transform:rotateX(50deg) translateX(-200vw) skewX(-50deg);opacity:1}100%{transform:rotateX(0deg) translateX(0) skewX(0deg);opacity:1}}@keyframes puff-in-hor{0%{transform:scaleX(2);filter:blur(4px);opacity:0}100%{transform:scaleX(1);filter:blur(0px);opacity:1}}@keyframes puff-in-ver{0%{transform:scaleY(2);filter:blur(4px);opacity:0}100%{transform:scaleY(1);filter:blur(0px);opacity:1}}",
   map: null
 };
+const Encryption = "Encryption.mp4";
+const Encryption2 = "Encryption.ogg";
+const Quantum = "Quantum.mp4";
+const VehicleMapping = "VehicleMapping.mp4";
+const WinnerTakesAll = "WinnerTakesAll.mp4";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `<div class="${"projectRow"}"><div id="${"vehicleCard"}"><button class="${"shadowButton"}" id="${"showHierarchy"}">&lt;Vehicle&gt;

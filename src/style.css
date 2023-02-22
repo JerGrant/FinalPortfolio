@@ -24,13 +24,13 @@
 	border-color: var(--bordercolor);
 	box-shadow: var(--shadowBoxing);
 	text-shadow: VAR(--shadowText);
-	--backgroundImage: url(./lib/fireStorm.png);
+	--backgroundImage: url($lib/fireStorm.png);
 	background-size: contain;
-	--shadowButtonImage: url(./lib/background/cool.jpeg);
-	--shadowButtonImage2: url(./lib/background/eagle.jpeg);
+	--shadowButtonImage: url($lib/cool.jpeg);
+	--shadowButtonImage2: url($lib/eagle.jpeg);
 	--buttonPadding: 1rem 12rem 1rem 0rem;
 	--buttonPadding2: 0rem 12.4rem 1rem 0rem;
-	--theCursor: url(./lib/feather.png);
+	--theCursor: url($lib/feather.png);
 	--cursorSize: 4rem;
 	--cursorSize2: 2rem;
 	--aboutSize: 25rem;
@@ -88,8 +88,8 @@ fieldset{
 	--actionItems: #11e3ee;
 	--color-text: #CAC3B8;
 	--color-header-text: #CAC3B8;
-	--backgroundImage: url(./lib/nightSky.png);
-	--theCursor: url(./lib/cosCursor.png);
+	--backgroundImage: url($lib/nightSky.png);
+	--theCursor: url($lib/cosCursor.png);
 	--cursorSize: 2rem;
 	--cursorSize2: 1rem;
 }
@@ -101,8 +101,8 @@ fieldset{
 	--actionItems: #11e3ee;
 	--color-text: #CAC3B8;
 	--color-header-text: #CAC3B8;
-	--backgroundImage: url(./lib/nightSky.png);
-	--theCursor: url(./lib/cosCursor.png);
+	--backgroundImage: url($lib/nightSky.png);
+	--theCursor: url($lib/cosCursor.png);
 	--cursorSize: 2rem;
 	--cursorSize2: 1rem;
 }
@@ -119,12 +119,12 @@ fieldset{
 	--shadowButton:0;
 	--shadowcolor: none;
 	--shadowText: 0;
-	--backgroundImage: url(./lib/mountWave.png);
-	--shadowButtonImage: url(./lib/wave1.png);
-	--shadowButtonImage2: url(./lib/wave2.png);
+	--backgroundImage: url($lib/mountWave.png);
+	--shadowButtonImage: url($lib/wave1.png);
+	--shadowButtonImage2: url($lib/wave2.png);
 	--buttonPadding: 14rem 0rem 0rem 8rem;
 	--buttonPadding2: 0rem 2rem 14rem 0rem;
-	--theCursor: url(./lib/waterCursor.png);
+	--theCursor: url($lib/waterCursor.png);
 	--cursorSize: 2rem;
 	--cursorSize2: 1rem;
 }
@@ -140,12 +140,12 @@ fieldset{
 	--shadowButton:0;
 	--shadowcolor: none;
 	--shadowText: 0;
-	--backgroundImage: url(./lib/mountWave.png);
-	--shadowButtonImage: url(./lib/wave1.png);
-	--shadowButtonImage2: url(./lib/wave2.png);
+	--backgroundImage: url($lib/mountWave.png);
+	--shadowButtonImage: url($lib/wave1.png);
+	--shadowButtonImage2: url($lib/wave2.png);
 	--buttonPadding: 14rem 0rem 0rem 8rem;
 	--buttonPadding2: 0rem 2rem 14rem 0rem;
-	--theCursor: url(./lib/waterCursor.png);
+	--theCursor: url($lib/waterCursor.png);
 	--cursorSize: 2rem;
 	--cursorSize2: 1rem;
 }
@@ -161,12 +161,12 @@ fieldset{
 	--shadowButton:0;
 	--shadowcolor: none;
 	--shadowText: 0;
-	--backgroundImage: url(./lib/cosRoughPillar.png);
-	--shadowButtonImage: url(./lib/cosYin.png);
-	--shadowButtonImage2: url(./lib/cosCave.png);
+	--backgroundImage: url($lib/cosRoughPillar.png);
+	--shadowButtonImage: url($lib/cosYin.png);
+	--shadowButtonImage2: url($lib/cosCave.png);
 	--buttonPadding: 8rem 12rem 0rem 0rem;
 	--buttonPadding2: 14rem 8rem 0rem 0rem;
-	--theCursor: url(./lib/cosCloud.png);
+	--theCursor: url($lib/cosCloud.png);
 
 }
 .dark{
@@ -181,12 +181,12 @@ fieldset{
 	--shadowButton:0;
 	--shadowcolor: none;
 	--shadowText: 0;
-	--backgroundImage: url(./lib/cosRoughPillar.png);
-	--shadowButtonImage: url(./lib/cosYin.png);
-	--shadowButtonImage2: url(./lib/cosCave.png);
+	--backgroundImage: url($lib/cosRoughPillar.png);
+	--shadowButtonImage: url($lib/cosYin.png);
+	--shadowButtonImage2: url($lib/cosCave.png);
 	--buttonPadding: 8rem 12rem 0rem 0rem;
 	--buttonPadding2: 14rem 8rem 0rem 0rem;
-	--theCursor: url(./lib/cosCloud.png);
+	--theCursor: url($lib/cosCloud.png);
 
 }
 :root:has(#something:checked){
@@ -201,9 +201,9 @@ fieldset{
 	--shadowButton:0;
 	--shadowcolor: none;
 	--shadowText: 0;
-	--backgroundImage: url(./lib/lava.png);
-	--shadowButtonImage: url(./lib/fireRing1.png);
-	--shadowButtonImage2: url(./lib/fireRing2.png);
+	--backgroundImage: url($lib/lava.png);
+	--shadowButtonImage: url($lib/fireRing1.png);
+	--shadowButtonImage2: url($lib/fireRing2.png);
 	--buttonPadding: 0rem 0rem 0rem 0rem;
 	--buttonPadding2: 0rem 0rem 0rem 0rem;
 }
@@ -219,9 +219,9 @@ fieldset{
 	--shadowButton:0;
 	--shadowcolor: none;
 	--shadowText: 0;
-	--backgroundImage: url(./lib/lava.png);
-	--shadowButtonImage: url(./lib/fireRing1.png);
-	--shadowButtonImage2: url(./lib/fireRing2.png);
+	--backgroundImage: url($lib/lava.png);
+	--shadowButtonImage: url($lib/fireRing1.png);
+	--shadowButtonImage2: url($lib/fireRing2.png);
 	--buttonPadding: 0rem 0rem 0rem 0rem;
 	--buttonPadding2: 0rem 0rem 0rem 0rem;
 }

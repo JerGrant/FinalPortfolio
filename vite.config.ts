@@ -9,7 +9,7 @@ const config: UserConfig = {
 	ssr: {
 		noExternal: ['three', 'troika-three-text']
 	},
-	assetsInclude:[]
+	assetsInclude: ['**/*.glb', '**/*.gltf'],
 };
 
 export default config;

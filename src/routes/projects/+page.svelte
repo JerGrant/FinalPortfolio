@@ -2,11 +2,12 @@
     import "../../style.css";
     import './project.css';
 	import { Video } from 'flowbite-svelte'
-	import Encryption from '../../lib/videos/Encryption.mp4';
-	import Encryption2 from '../../lib/videos/Encryption.ogg';
-	import Quantum from '../../lib/videos/Quantum.mp4';
-	import VehicleMapping from '../../lib/videos/VehicleMapping.mp4';
-	import WinnerTakesAll from '../../lib/videos/WinnerTakesAll.mp4';
+	const Encryption="Encryption.mp4";
+	const Encryption2="Encryption.ogg";
+	const Quantum="Quantum.mp4";
+	const VehicleMapping="VehicleMapping.mp4";
+	const WinnerTakesAll="WinnerTakesAll.mp4";
+	
 	import { reveal } from 'svelte-reveal';
 </script>
 

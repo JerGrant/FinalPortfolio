@@ -30,7 +30,8 @@ const config = {
 		alias: {
 			'my-file': './src/routes/+page.ts'
 		}
-	}
+	},
+	assetsInclude: ['**/*.glb'],
 };
 
 export default config;

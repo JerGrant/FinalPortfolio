@@ -1,7 +1,9 @@
 import { c as create_ssr_component, v as validate_component, d as add_attribute } from "../../../chunks/index2.js";
-import { g as github, l as linkedin, a as gmail } from "../../../chunks/li.js";
 import Page$1 from "../logo/_page.svelte.js";
 /* empty css                     */const header = "";
+const linkedin = "li.png";
+const github = "github.png";
+const gmail = "gmail.png";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<header><div class="${"navWrapper"}">${validate_component(Page$1, "LogoData").$$render($$result, {}, {}, {})}
     <a href="${"#aboutCard"}" id="${"aboutNav"}">About</a>

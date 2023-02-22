@@ -1,7 +1,7 @@
 <script lang="ts">
-    import github from '../../lib/github.png';
-    import gmail from '../../lib/gmail.png';
-    import linkedin from '../../lib/li.png';
+    const linkedin="li.png";
+    const github="github.png";
+    const gmail="gmail.png";
     import LogoData from '../logo/+page.svelte';
     import '../../style.css';
     import './header.css';

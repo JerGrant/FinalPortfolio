@@ -92,12 +92,12 @@ animation: pulse ease 2s infinite;
     border: 0.4rem ridge var(--bordercolor);
     border-radius: 0.5rem;
     padding: 0.5rem 0.5rem 0rem 0.5rem;
-    background:transparent center/cover url("../../lib/face2.png") no-repeat;
+    background:transparent center/cover url("$lib/face2.png") no-repeat;
     display: flex;
 }
 .facePic:hover{
     padding-top: 20rem;
-    background:transparent center/cover url("../../lib/face.png") no-repeat;
+    background:transparent center/cover url("$lib/face.png") no-repeat;
 }
 .thePara3{
 box-shadow: 5px 10px 5px 5px var(--shadowcolor);

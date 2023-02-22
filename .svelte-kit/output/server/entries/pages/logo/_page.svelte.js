@@ -16586,7 +16586,7 @@ ${scene ? `${validate_component(Object3DInstance, "Object3DInstance").$$render(
   } while (!$$settled);
   return $$rendered;
 });
-const url = "/src/lib/jg.glb";
+const url = "jg.glb?url";
 const SceneTwo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(PerspectiveCamera2, "PerspectiveCamera").$$render(
     $$result,

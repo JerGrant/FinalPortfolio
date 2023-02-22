@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
 	import '../style.css';
-	import feather from '../lib/feather.png';
 	import { onMount } from 'svelte';
 	import toggleText from './toggleButton';
 	import HeaderData from './Header/+page.svelte';

@@ -6,7 +6,7 @@
         OrbitControls,
     } from '@threlte/core';
     import{GLTF, useGltf} from '@threlte/extras';
-    const url="/src/lib/jg.glb?url";
+    const url="jg.glb?url";
 
 </script>
 
