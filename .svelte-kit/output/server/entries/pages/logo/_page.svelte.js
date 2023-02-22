@@ -1,4 +1,4 @@
-import { j as get_store_value, o as onDestroy, s as setContext, t as tick, k as getContext, c as create_ssr_component, b as subscribe, v as validate_component, l as set_store_value, d as add_attribute, p as createEventDispatcher, q as each } from "../../../chunks/index2.js";
+import { o as onDestroy, j as get_store_value, s as setContext, t as tick, k as getContext, c as create_ssr_component, b as subscribe, v as validate_component, l as set_store_value, d as add_attribute, p as createEventDispatcher, q as each } from "../../../chunks/index2.js";
 import { d as derived, w as writable, r as readable } from "../../../chunks/index.js";
 /**
  * @license
@@ -1436,20 +1436,20 @@ class Source {
     };
     const data = this.data;
     if (data !== null) {
-      let url;
+      let url2;
       if (Array.isArray(data)) {
-        url = [];
+        url2 = [];
         for (let i = 0, l = data.length; i < l; i++) {
           if (data[i].isDataTexture) {
-            url.push(serializeImage(data[i].image));
+            url2.push(serializeImage(data[i].image));
           } else {
-            url.push(serializeImage(data[i]));
+            url2.push(serializeImage(data[i]));
           }
         }
       } else {
-        url = serializeImage(data);
+        url2 = serializeImage(data);
       }
-      output.url = url;
+      output.url = url2;
     }
     if (!isRootObject) {
       meta.images[this.uuid] = output;
@@ -9065,19 +9065,19 @@ class LoadingManager {
     this.onLoad = onLoad;
     this.onProgress = onProgress;
     this.onError = onError;
-    this.itemStart = function(url) {
+    this.itemStart = function(url2) {
       itemsTotal++;
       if (isLoading === false) {
         if (scope.onStart !== void 0) {
-          scope.onStart(url, itemsLoaded, itemsTotal);
+          scope.onStart(url2, itemsLoaded, itemsTotal);
         }
       }
       isLoading = true;
     };
-    this.itemEnd = function(url) {
+    this.itemEnd = function(url2) {
       itemsLoaded++;
       if (scope.onProgress !== void 0) {
-        scope.onProgress(url, itemsLoaded, itemsTotal);
+        scope.onProgress(url2, itemsLoaded, itemsTotal);
       }
       if (itemsLoaded === itemsTotal) {
         isLoading = false;
@@ -9086,16 +9086,16 @@ class LoadingManager {
         }
       }
     };
-    this.itemError = function(url) {
+    this.itemError = function(url2) {
       if (scope.onError !== void 0) {
-        scope.onError(url);
+        scope.onError(url2);
       }
     };
-    this.resolveURL = function(url) {
+    this.resolveURL = function(url2) {
       if (urlModifier) {
-        return urlModifier(url);
+        return urlModifier(url2);
       }
-      return url;
+      return url2;
     };
     this.setURLModifier = function(transform) {
       urlModifier = transform;
@@ -9138,10 +9138,10 @@ class Loader {
   }
   load() {
   }
-  loadAsync(url, onProgress) {
+  loadAsync(url2, onProgress) {
     const scope = this;
     return new Promise(function(resolve, reject) {
-      scope.load(url, resolve, onProgress, reject);
+      scope.load(url2, resolve, onProgress, reject);
     });
   }
   parse() {
@@ -9178,37 +9178,37 @@ class FileLoader extends Loader {
   constructor(manager) {
     super(manager);
   }
-  load(url, onLoad, onProgress, onError) {
-    if (url === void 0)
-      url = "";
+  load(url2, onLoad, onProgress, onError) {
+    if (url2 === void 0)
+      url2 = "";
     if (this.path !== void 0)
-      url = this.path + url;
-    url = this.manager.resolveURL(url);
-    const cached = Cache.get(url);
+      url2 = this.path + url2;
+    url2 = this.manager.resolveURL(url2);
+    const cached = Cache.get(url2);
     if (cached !== void 0) {
-      this.manager.itemStart(url);
+      this.manager.itemStart(url2);
       setTimeout(() => {
         if (onLoad)
           onLoad(cached);
-        this.manager.itemEnd(url);
+        this.manager.itemEnd(url2);
       }, 0);
       return cached;
     }
-    if (loading[url] !== void 0) {
-      loading[url].push({
+    if (loading[url2] !== void 0) {
+      loading[url2].push({
         onLoad,
         onProgress,
         onError
       });
       return;
     }
-    loading[url] = [];
-    loading[url].push({
+    loading[url2] = [];
+    loading[url2].push({
       onLoad,
       onProgress,
       onError
     });
-    const req = new Request(url, {
+    const req = new Request(url2, {
       headers: new Headers(this.requestHeader),
       credentials: this.withCredentials ? "include" : "same-origin"
       // An abort controller could be added within a future PR
@@ -9223,7 +9223,7 @@ class FileLoader extends Loader {
         if (typeof ReadableStream === "undefined" || response.body === void 0 || response.body.getReader === void 0) {
           return response;
         }
-        const callbacks = loading[url];
+        const callbacks = loading[url2];
         const reader = response.body.getReader();
         const contentLength = response.headers.get("Content-Length") || response.headers.get("X-File-Size");
         const total = contentLength ? parseInt(contentLength) : 0;
@@ -9280,31 +9280,31 @@ class FileLoader extends Loader {
           }
       }
     }).then((data) => {
-      Cache.add(url, data);
-      const callbacks = loading[url];
-      delete loading[url];
+      Cache.add(url2, data);
+      const callbacks = loading[url2];
+      delete loading[url2];
       for (let i = 0, il = callbacks.length; i < il; i++) {
         const callback = callbacks[i];
         if (callback.onLoad)
           callback.onLoad(data);
       }
     }).catch((err) => {
-      const callbacks = loading[url];
+      const callbacks = loading[url2];
       if (callbacks === void 0) {
-        this.manager.itemError(url);
+        this.manager.itemError(url2);
         throw err;
       }
-      delete loading[url];
+      delete loading[url2];
       for (let i = 0, il = callbacks.length; i < il; i++) {
         const callback = callbacks[i];
         if (callback.onError)
           callback.onError(err);
       }
-      this.manager.itemError(url);
+      this.manager.itemError(url2);
     }).finally(() => {
-      this.manager.itemEnd(url);
+      this.manager.itemEnd(url2);
     });
-    this.manager.itemStart(url);
+    this.manager.itemStart(url2);
   }
   setResponseType(value) {
     this.responseType = value;
@@ -9319,35 +9319,35 @@ class ImageLoader extends Loader {
   constructor(manager) {
     super(manager);
   }
-  load(url, onLoad, onProgress, onError) {
+  load(url2, onLoad, onProgress, onError) {
     if (this.path !== void 0)
-      url = this.path + url;
-    url = this.manager.resolveURL(url);
+      url2 = this.path + url2;
+    url2 = this.manager.resolveURL(url2);
     const scope = this;
-    const cached = Cache.get(url);
+    const cached = Cache.get(url2);
     if (cached !== void 0) {
-      scope.manager.itemStart(url);
+      scope.manager.itemStart(url2);
       setTimeout(function() {
         if (onLoad)
           onLoad(cached);
-        scope.manager.itemEnd(url);
+        scope.manager.itemEnd(url2);
       }, 0);
       return cached;
     }
     const image = createElementNS("img");
     function onImageLoad() {
       removeEventListeners();
-      Cache.add(url, this);
+      Cache.add(url2, this);
       if (onLoad)
         onLoad(this);
-      scope.manager.itemEnd(url);
+      scope.manager.itemEnd(url2);
     }
     function onImageError(event) {
       removeEventListeners();
       if (onError)
         onError(event);
-      scope.manager.itemError(url);
-      scope.manager.itemEnd(url);
+      scope.manager.itemError(url2);
+      scope.manager.itemEnd(url2);
     }
     function removeEventListeners() {
       image.removeEventListener("load", onImageLoad, false);
@@ -9355,12 +9355,12 @@ class ImageLoader extends Loader {
     }
     image.addEventListener("load", onImageLoad, false);
     image.addEventListener("error", onImageError, false);
-    if (url.slice(0, 5) !== "data:") {
+    if (url2.slice(0, 5) !== "data:") {
       if (this.crossOrigin !== void 0)
         image.crossOrigin = this.crossOrigin;
     }
-    scope.manager.itemStart(url);
-    image.src = url;
+    scope.manager.itemStart(url2);
+    image.src = url2;
     return image;
   }
 }
@@ -9368,12 +9368,12 @@ class TextureLoader extends Loader {
   constructor(manager) {
     super(manager);
   }
-  load(url, onLoad, onProgress, onError) {
+  load(url2, onLoad, onProgress, onError) {
     const texture = new Texture();
     const loader = new ImageLoader(this.manager);
     loader.setCrossOrigin(this.crossOrigin);
     loader.setPath(this.path);
-    loader.load(url, function(image) {
+    loader.load(url2, function(image) {
       texture.image = image;
       texture.needsUpdate = true;
       if (onLoad !== void 0) {
@@ -9722,25 +9722,25 @@ class LoaderUtils {
       return s;
     }
   }
-  static extractUrlBase(url) {
-    const index = url.lastIndexOf("/");
+  static extractUrlBase(url2) {
+    const index = url2.lastIndexOf("/");
     if (index === -1)
       return "./";
-    return url.slice(0, index + 1);
+    return url2.slice(0, index + 1);
   }
-  static resolveURL(url, path) {
-    if (typeof url !== "string" || url === "")
+  static resolveURL(url2, path) {
+    if (typeof url2 !== "string" || url2 === "")
       return "";
-    if (/^https?:\/\//i.test(path) && /^\//.test(url)) {
+    if (/^https?:\/\//i.test(path) && /^\//.test(url2)) {
       path = path.replace(/(^https?:\/\/[^\/]+).*/i, "$1");
     }
-    if (/^(https?:)?\/\//i.test(url))
-      return url;
-    if (/^data:.*,.*$/i.test(url))
-      return url;
-    if (/^blob:.*$/i.test(url))
-      return url;
-    return path + url;
+    if (/^(https?:)?\/\//i.test(url2))
+      return url2;
+    if (/^data:.*,.*$/i.test(url2))
+      return url2;
+    if (/^blob:.*$/i.test(url2))
+      return url2;
+    return path + url2;
   }
 }
 class ImageBitmapLoader extends Loader {
@@ -9759,42 +9759,42 @@ class ImageBitmapLoader extends Loader {
     this.options = options;
     return this;
   }
-  load(url, onLoad, onProgress, onError) {
-    if (url === void 0)
-      url = "";
+  load(url2, onLoad, onProgress, onError) {
+    if (url2 === void 0)
+      url2 = "";
     if (this.path !== void 0)
-      url = this.path + url;
-    url = this.manager.resolveURL(url);
+      url2 = this.path + url2;
+    url2 = this.manager.resolveURL(url2);
     const scope = this;
-    const cached = Cache.get(url);
+    const cached = Cache.get(url2);
     if (cached !== void 0) {
-      scope.manager.itemStart(url);
+      scope.manager.itemStart(url2);
       setTimeout(function() {
         if (onLoad)
           onLoad(cached);
-        scope.manager.itemEnd(url);
+        scope.manager.itemEnd(url2);
       }, 0);
       return cached;
     }
     const fetchOptions = {};
     fetchOptions.credentials = this.crossOrigin === "anonymous" ? "same-origin" : "include";
     fetchOptions.headers = this.requestHeader;
-    fetch(url, fetchOptions).then(function(res) {
+    fetch(url2, fetchOptions).then(function(res) {
       return res.blob();
     }).then(function(blob) {
       return createImageBitmap(blob, Object.assign(scope.options, { colorSpaceConversion: "none" }));
     }).then(function(imageBitmap) {
-      Cache.add(url, imageBitmap);
+      Cache.add(url2, imageBitmap);
       if (onLoad)
         onLoad(imageBitmap);
-      scope.manager.itemEnd(url);
+      scope.manager.itemEnd(url2);
     }).catch(function(e) {
       if (onError)
         onError(e);
-      scope.manager.itemError(url);
-      scope.manager.itemEnd(url);
+      scope.manager.itemError(url2);
+      scope.manager.itemEnd(url2);
     });
-    scope.manager.itemStart(url);
+    scope.manager.itemStart(url2);
   }
 }
 class Clock {
@@ -10441,10 +10441,10 @@ const targetChanged = (a, b) => {
   return false;
 };
 const useEventRaycast = (ctx, rootCtx, renderCtx) => {
-  let camera = get_store_value(ctx.camera);
+  let camera;
   const unsubscribeCamera = ctx.camera.subscribe((value) => camera = value);
   onDestroy(unsubscribeCamera);
-  let pointer = get_store_value(ctx.pointer);
+  let pointer;
   const unsubscribePointer = ctx.pointer.subscribe((value) => pointer = value);
   onDestroy(unsubscribePointer);
   let pointerDownOn;
@@ -10494,13 +10494,13 @@ function isValidClickEvent(intersection, pointerDownOn) {
   return intersection.object.uuid === pointerDownOn.object.uuid && intersection.instanceId === pointerDownOn.instanceId;
 }
 const useFrameloopRaycast = (ctx, rootCtx) => {
-  let pointerOverCanvas = get_store_value(ctx.pointerOverCanvas);
+  let pointerOverCanvas;
   const unsubscribePointerOverCanvas = ctx.pointerOverCanvas.subscribe((value) => pointerOverCanvas = value);
   onDestroy(unsubscribePointerOverCanvas);
-  let camera = get_store_value(ctx.camera);
+  let camera;
   const unsubscribeCamera = ctx.camera.subscribe((value) => camera = value);
   onDestroy(unsubscribeCamera);
-  let pointer = get_store_value(ctx.pointer);
+  let pointer;
   const unsubscribePointer = ctx.pointer.subscribe((value) => pointer = value);
   onDestroy(unsubscribePointer);
   const raycast = () => {
@@ -10969,7 +10969,7 @@ const useParentSize = () => {
   };
 };
 const Canvas_svelte_svelte_type_style_lang = "";
-const css = {
+const css$1 = {
   code: "canvas.svelte-15bl8wt{display:block}",
   map: null
 };
@@ -11035,7 +11035,7 @@ const Canvas = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.rootCtx(rootCtx);
   if ($$props.audioCtx === void 0 && $$bindings.audioCtx && audioCtx !== void 0)
     $$bindings.audioCtx(audioCtx);
-  $$result.css.add(css);
+  $$result.css.add(css$1);
   {
     userSize.set(size);
   }
@@ -12967,13 +12967,13 @@ class DRACOLoader extends Loader {
     this.workerLimit = workerLimit;
     return this;
   }
-  load(url, onLoad, onProgress, onError) {
+  load(url2, onLoad, onProgress, onError) {
     const loader = new FileLoader(this.manager);
     loader.setPath(this.path);
     loader.setResponseType("arraybuffer");
     loader.setRequestHeader(this.requestHeader);
     loader.setWithCredentials(this.withCredentials);
-    loader.load(url, (buffer) => {
+    loader.load(url2, (buffer) => {
       this.decodeDracoFile(buffer, onLoad).catch(onError);
     }, onProgress, onError);
   }
@@ -13032,13 +13032,13 @@ class DRACOLoader extends Loader {
     }
     return geometry;
   }
-  _loadLibrary(url, responseType) {
+  _loadLibrary(url2, responseType) {
     const loader = new FileLoader(this.manager);
     loader.setPath(this.decoderPath);
     loader.setResponseType(responseType);
     loader.setWithCredentials(this.withCredentials);
     return new Promise((resolve, reject) => {
-      loader.load(url, resolve, void 0, reject);
+      loader.load(url2, resolve, void 0, reject);
     });
   }
   preload() {
@@ -13294,7 +13294,7 @@ class GLTFLoader extends Loader {
       return new GLTFMeshGpuInstancing(parser);
     });
   }
-  load(url, onLoad, onProgress, onError) {
+  load(url2, onLoad, onProgress, onError) {
     const scope = this;
     let resourcePath;
     if (this.resourcePath !== "") {
@@ -13302,28 +13302,28 @@ class GLTFLoader extends Loader {
     } else if (this.path !== "") {
       resourcePath = this.path;
     } else {
-      resourcePath = LoaderUtils.extractUrlBase(url);
+      resourcePath = LoaderUtils.extractUrlBase(url2);
     }
-    this.manager.itemStart(url);
+    this.manager.itemStart(url2);
     const _onError = function(e) {
       if (onError) {
         onError(e);
       } else {
         console.error(e);
       }
-      scope.manager.itemError(url);
-      scope.manager.itemEnd(url);
+      scope.manager.itemError(url2);
+      scope.manager.itemEnd(url2);
     };
     const loader = new FileLoader(this.manager);
     loader.setPath(this.path);
     loader.setResponseType("arraybuffer");
     loader.setRequestHeader(this.requestHeader);
     loader.setWithCredentials(this.withCredentials);
-    loader.load(url, function(data) {
+    loader.load(url2, function(data) {
       try {
         scope.parse(data, resourcePath, function(gltf) {
           onLoad(gltf);
-          scope.manager.itemEnd(url);
+          scope.manager.itemEnd(url2);
         }, _onError);
       } catch (e) {
         _onError(e);
@@ -15674,9 +15674,9 @@ var MeshoptDecoder = function() {
   };
   var workers = [];
   var requestId = 0;
-  function createWorker(url) {
+  function createWorker(url2) {
     var worker = {
-      object: new Worker(url),
+      object: new Worker(url2),
       pending: 0,
       requests: {}
     };
@@ -15691,11 +15691,11 @@ var MeshoptDecoder = function() {
   function initWorkers(count) {
     var source = "var instance; var ready = WebAssembly.instantiate(new Uint8Array([" + new Uint8Array(unpack(wasm)) + "]), {}).then(function(result) { instance = result.instance; instance.exports.__wasm_call_ctors(); });self.onmessage = workerProcess;" + decode.toString() + workerProcess.toString();
     var blob = new Blob([source], { type: "text/javascript" });
-    var url = URL.createObjectURL(blob);
+    var url2 = URL.createObjectURL(blob);
     for (var i = 0; i < count; ++i) {
-      workers[i] = createWorker(url);
+      workers[i] = createWorker(url2);
     }
-    URL.revokeObjectURL(url);
+    URL.revokeObjectURL(url2);
   }
   function decodeWorker(count, size, source, mode, filter) {
     var worker = workers[0];
@@ -16005,14 +16005,14 @@ class KTX2Loader extends Loader {
     }
     return this.transcoderPending;
   }
-  load(url, onLoad, onProgress, onError) {
+  load(url2, onLoad, onProgress, onError) {
     if (this.workerConfig === null) {
       throw new Error("THREE.KTX2Loader: Missing initialization with `.detectSupport( renderer )`.");
     }
     const loader = new FileLoader(this.manager);
     loader.setResponseType("arraybuffer");
     loader.setWithCredentials(this.withCredentials);
-    loader.load(url, (buffer) => {
+    loader.load(url2, (buffer) => {
       if (_taskCache.has(buffer)) {
         const cachedTask = _taskCache.get(buffer);
         return cachedTask.promise.then(onLoad).catch(onError);
@@ -16386,7 +16386,7 @@ const GLTF = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { visible = void 0 } = $$props;
   let { dispose = void 0 } = $$props;
   let { lookAt = void 0 } = $$props;
-  let { url } = $$props;
+  let { url: url2 } = $$props;
   let { dracoDecoderPath = void 0 } = $$props;
   let { useDraco = false } = $$props;
   let { useMeshopt = false } = $$props;
@@ -16483,8 +16483,8 @@ const GLTF = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.dispose(dispose);
   if ($$props.lookAt === void 0 && $$bindings.lookAt && lookAt !== void 0)
     $$bindings.lookAt(lookAt);
-  if ($$props.url === void 0 && $$bindings.url && url !== void 0)
-    $$bindings.url(url);
+  if ($$props.url === void 0 && $$bindings.url && url2 !== void 0)
+    $$bindings.url(url2);
   if ($$props.dracoDecoderPath === void 0 && $$bindings.dracoDecoderPath && dracoDecoderPath !== void 0)
     $$bindings.dracoDecoderPath(dracoDecoderPath);
   if ($$props.useDraco === void 0 && $$bindings.useDraco && useDraco !== void 0)
@@ -16522,7 +16522,7 @@ const GLTF = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   do {
     $$settled = true;
     {
-      loader.load(url, onLoad, void 0, onError);
+      loader.load(url2, onLoad, void 0, onError);
     }
     {
       {
@@ -16586,100 +16586,63 @@ ${scene ? `${validate_component(Object3DInstance, "Object3DInstance").$$render(
   } while (!$$settled);
   return $$rendered;
 });
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let inViewport;
-  let $$settled;
-  let $$rendered;
-  do {
-    $$settled = true;
-    $$rendered = `<div class="${"scene tooltip"}"><span class="${"tooltiptext"}">3D model using Blender and threeJS! Give it a drag!</span>
-
-
- 
-    ${validate_component(Canvas, "Threlte.Canvas").$$render($$result, {}, {}, {
+const url = "/src/lib/jg.glb";
+const SceneTwo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(PerspectiveCamera2, "PerspectiveCamera").$$render(
+    $$result,
+    {
+      position: { x: 0, y: 0, z: 8 },
+      lookAt: { x: 0, y: 0, z: 0 }
+    },
+    {},
+    {
       default: () => {
-        return `
-      
-      ${validate_component(PerspectiveCamera2, "Threlte.PerspectiveCamera").$$render(
+        return `${validate_component(OrbitControls2, "OrbitControls").$$render(
           $$result,
           {
-            position: { x: 5, y: 5, z: 5 },
-            fov: 35,
-            viewportAware: true,
-            inViewport
+            autoRotate: true,
+            enableZoom: false,
+            enablePan: false
           },
-          {
-            inViewport: ($$value) => {
-              inViewport = $$value;
-              $$settled = false;
-            }
-          },
-          {
-            default: () => {
-              return `
-        ${validate_component(OrbitControls2, "Threlte.OrbitControls").$$render(
-                $$result,
-                {
-                  autoRotate: true,
-                  enableZoom: false,
-                  enablePan: false
-                },
-                {},
-                {}
-              )}`;
-            }
-          }
-        )}
-  
-      
-      ${validate_component(AmbientLight2, "Threlte.AmbientLight").$$render($$result, { color: "blue", intensity: 5 }, {}, {})}
-
-
-      
-      ${validate_component(DirectionalLight2, "Threlte.DirectionalLight").$$render(
-          $$result,
-          {
-            viewportAware: true,
-            color: "white",
-            intensity: 5,
-            shadow: { camera: { top: 20 } },
-            inViewport
-          },
-          {
-            inViewport: ($$value) => {
-              inViewport = $$value;
-              $$settled = false;
-            }
-          },
+          {},
           {}
-        )}
-
-
-      
-
-      ${validate_component(GLTF, "Extra.GLTF").$$render(
-          $$result,
-          {
-            url: "../../lib/jglogo.glb",
-            position: { y: -2 },
-            receiveShadow: true,
-            castShadow: true,
-            viewportAware: true,
-            inViewport
-          },
-          {
-            inViewport: ($$value) => {
-              inViewport = $$value;
-              $$settled = false;
-            }
-          },
-          {}
-        )}
-      `;
+        )}`;
       }
-    })}</div>`;
-  } while (!$$settled);
-  return $$rendered;
+    }
+  )}
+
+${validate_component(DirectionalLight2, "DirectionalLight").$$render($$result, {}, {}, {})}
+${validate_component(AmbientLight2, "AmbientLight").$$render($$result, { color: "white", intensity: 6 }, {}, {})}
+
+${validate_component(GLTF, "GLTF").$$render(
+    $$result,
+    {
+      url,
+      scale: 25,
+      position: { x: 0, y: 0, z: 0 },
+      receiveShadow: true,
+      castShadow: true,
+      viewportAware: true,
+      useDraco: true
+    },
+    {},
+    {}
+  )}`;
+});
+const _page_svelte_svelte_type_style_lang = "";
+const css = {
+  code: ".logo.svelte-u2bpfm{position:relative;padding:1rem 0rem 1rem 1rem;width:4rem;height:4rem}",
+  map: null
+};
+const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css);
+  return `<section><div class="${"scene tooltip"}"><span class="${"tooltiptext"}">3D model using Blender and threeJS! Give it a drag!</span>
+	<div class="${"logo svelte-u2bpfm"}">${validate_component(Canvas, "Canvas").$$render($$result, {}, {}, {
+    default: () => {
+      return `${validate_component(SceneTwo, "SceneTwo").$$render($$result, {}, {}, {})}`;
+    }
+  })}</div></div>
+</section>`;
 });
 export {
   Page as default

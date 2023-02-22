@@ -1,8 +1,5 @@
 import type { PageLoad } from './$types';
 
 export const load = (async () => {
-    return {
-        fetch: `../../lib/jglogo.glb`,
-        
-    };
+    return {};
 }) satisfies PageLoad;

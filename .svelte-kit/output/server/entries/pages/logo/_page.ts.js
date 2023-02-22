@@ -1,7 +1,5 @@
 const load = async () => {
-  return {
-    fetch: `../../lib/jglogo.glb`
-  };
+  return {};
 };
 export {
   load
